@@ -1,22 +1,3 @@
-const quizBox = document.getElementById('quiz');
-const resultsBox = document.getElementById('results');
-const submitButton = document.getElementById('submit');
-const nextButton = document.getElementById('next');
-const previousButton = document.getElementById('previous');
-const ansRationale = document.getElementById('rationale');
-const currentScore = document.getElementById('score');
-const startQuiz = document.getElementById('begin');
-const submitAnswer = document.getElementById('submitAns')
-
-
-function quizBuilder() {};
-
-function scoreBoard() {};
-
-quizBuilder();
-
-submitButton.addEventListener('click', scoreBoard);
-
 function quizBuilder () {
     const output = []; 
     const pages = document.querySelectorAll(".page");
@@ -32,16 +13,14 @@ function quizBuilder () {
                 ${currentQ.answer[letter]}
                 </label>`);}
                 output.push(
-                    `<section class="question">${currentQ.question}</section>
-                    <section class="answers"${answers.join('')}</section>`);});
-        quizBox.innerHTML = output.join('');
-                
-    output.push(
-        `<section class='page'>
-        <section class='question'>${currentQ.question}</section>
-        <section class='answers'${answers.join('')}</section>
-        </section>`);
-    }
+                    `<section class='page'>
+                    <section class="question">${currentQ.question}</section>
+                    <section class="answers"${answers.join('')}</section>`);
+                });
+        
+    quizContianer.innerHTML = output.join('');
+    console.log(output);
+}
 
 function selectRandomQ() {
     
@@ -67,12 +46,14 @@ function selectRandomQ() {
         }
         return false;
     }
+    consolelog(askedQs);
 }
 
 function showPage(n) {
     pages[currentPage].classList.remove('active-page');
     pages(n).classList.add('active-page');
     currentPage = n;
+    main.style.display = 'default';
     if (currentPage === 0) {
         previousButton.style.display = 'none';
     }
@@ -90,7 +71,7 @@ function showPage(n) {
     showPage(0);
 }
 
-function showResults() {
+function scoreBoard() {
     const answerBoxes = quizBox.querySelectorAll('.answers');
     let numRight = 0;
 
@@ -122,16 +103,21 @@ function displayPreviousPage() {
     displayPage(currentPage - 1);
 }
 
+// event listeners 
+// .addEventListener() can we use this or should we stick to the below syntax?
+
 $(function() {
 
     $('.submit').click(function(event) {
-        showResults();
+        // event.preventdefault();
+        scoreBoard();
     });
 });
 
 $(function() {
 
     $('.next').click(function(event) {
+        // event.preventdefault();
         displayNextPage();
     });
 });
@@ -139,9 +125,31 @@ $(function() {
 $(function() {
 
     $('.previous').click(function(event) {
+        // event.preventdefault();
         displayPreviousPage();
     });
 });
+
+$(function() {
+
+    $('.submitAns').click(function(event) {
+        // event.preventdefault();
+        if ($(':radio:checked', this)[0]) {
+        } 
+        else {
+                alert('Please select an answer to proceed!');
+                return false;
+        }
+        displayCorrectAndRationale();
+    });
+});
+
+$(function() {
+    
+    $('.begin').click(function(event) {
+        launchQuiz();
+    });
+})
 
 function displayCorrectAndRationale() {
 
@@ -153,14 +161,20 @@ function displayCorrectAndRationale() {
         <section class='correctAnswer'>${currentQ.correctAnswer}</section>
         <section class='rationale'>${currentQ.rationale}</section>
         </section>`);
+    }
+
+function launchQuiz() {
     
+    selectRandomQ();
+    quizBuilder();
+    showPage();
 }
 
-// $('submitAns').click(function() {
-//     if ($(':radio:checked', this)[0]) {
-//     } 
-//     else {
-//         alert('Please select an answer to proceed!');
-//         return false;
-//     }
-// });
+const quizBox = document.getElementById('quiz');
+const resultsBox = document.getElementById('results');
+const submitButton = document.getElementById('submit');
+const nextButton = document.getElementById('next');
+const previousButton = document.getElementById('previous');
+const currentScore = document.getElementById('score');
+const startQuiz = document.getElementById('begin');
+const submitAnswer = document.getElementById('submitAns');

@@ -1,7 +1,8 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: white;
-    background: url('https://get.pxhere.com/photo/branch-plant-leaf-flower-dark-line-green-jungle-darkness-fern-computer-wallpaper-fractal-art-505665.jpg') fixed;
+    background:  url('https://get.pxhere.com/photo/branch-plant-leaf-flower-dark-line-green-jungle-darkness-fern-computer-wallpaper-fractal-art-505665.jpg') fixed;
+    background-size: cover; 
     color: slategrey;
 }
 .page {
@@ -25,3 +26,25 @@ body {
     margin-top: 40px;
 }
 
+main {
+    display: none;
+}
+
+header {
+    text-align: center;
+    color: white;
+
+}
+
+button {
+padding: 20px;
+border: none;
+background-color: slateblue;
+color: #ffffff;
+font-size: 20px;
+text-transform: uppercase;
+border-radius: 0;
+cursor: pointer;
+transition: all 0.3s ease;
+margin-top: 40px
+}
