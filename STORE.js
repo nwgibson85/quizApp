@@ -6,7 +6,7 @@ const questionBank = [
         b: "Humpback whale",
         c: "Sperm whale",
         d: "Finback whale"},
-    correctAnser: "c",
+    correctAnswer: "c",
     rationale: "https://ocean.si.edu/sites/default/files/styles/photo_full/public/what-is-the-largest-whale-comparison-chart-full.jpg?itok=NZ1sn__o"},
     
     {question: '“Bird brain” is commonly used as a derogatory term for lack of intelligence, which of the following birds lends credence to this term with a brain smaller than its eye?',
@@ -15,7 +15,7 @@ const questionBank = [
         b: "Ostrich",
         c: "Greater yellow-headed vulture",
         d: "Toucan"},
-    correctAnser: "b",
+    correctAnswer: "b",
     rationale: "This is not the most scientific depiction, however it does a great job of demonstrating the size comparison.  https://funyourmind.wordpress.com/2016/08/31/ostrichs-eyes-are-bigger-than-its-brain/"},
     
     {question: "Which of the following animals is the fastest runner?",
@@ -24,7 +24,7 @@ const questionBank = [
         b: "Hippo",
         c: "Cow",
         d: "Polar bear"},
-    correctAnser: "a",
+    correctAnswer: "a",
     rationale: "Humans have been clocked running as fast as 28mph, and in this list are the fastest.  Cows surprisingly can reach speeds of 25 mph.  Polar bears 20mph and Hippos 19mph."},
     
     {question: "How many hours does a horse sleep in a 24 hour period?",
@@ -33,7 +33,7 @@ const questionBank = [
         b: "4",
         c: "3",
         d: "6"},
-    correctAnser: "c",
+    correctAnswer: "c",
     rationale: "Three hours a day roughly, and they only require 30 minutes in order to meet their needs for REM sleep."},
     
     {question: "The Giant ground sloth roamed the Americas, and is an ancient cousin to the two and three toed sloths that live in the American Rainforests.  Which answer below is the closest to the Giant ground sloth’s size? ",
@@ -42,7 +42,7 @@ const questionBank = [
         b: "an African elephant",
         c: "a Mountain lion",
         d: "a Triceratops"},
-    correctAnser: "b",
+    correctAnswer: "b",
     rationale: "../../images/species/m/megatherium-size.jpg"},
     
     {question: "The platypus is one of two types of mammals that lays eggs, which of the following is the other one?",
@@ -51,7 +51,7 @@ const questionBank = [
         b: "Pangolin",
         c: "Panda",
         d: "Echidna"},
-    correctAnser: "d",
+    correctAnswer: "d",
     rationale: "https://en.wikipedia.org/wiki/Echidna"},
     
     {question: "Which of the following is the largest rodent?",
@@ -60,7 +60,7 @@ const questionBank = [
         b: "Capybara",
         c: "Giant Hutia",
         d: "North American beaver"},
-    correctAnser: "b",
+    correctAnswer: "b",
     rationale: "https://en.wikipedia.org/wiki/List_of_largest_rodents"},
    
     {question: "How fast can an Ostrich run?",
@@ -69,7 +69,7 @@ const questionBank = [
         b: "33mph",
         c: "43mph",
         d: "53mph"},
-    correctAnser: "c",
+    correctAnswer: "c",
     rationale: "http://www.speedofanimals.com/animals/ostrich?h=1.52"},
     
     {question: "Which of the following animals only requires 20-40 seconds to empty their bladder?",
@@ -78,7 +78,7 @@ const questionBank = [
         b: "Mouse",
         c: "Okapi",
         d: "All of the above"},
-    correctAnser: "d",
+    correctAnswer: "d",
     rationale: "https://arxiv.org/abs/1310.3737"},
     
     {question: "How many eggs does a Tiger shark lay on average?",
