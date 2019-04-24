@@ -2,38 +2,45 @@ let askedQs = [];
 let randomQ;
 let n = 0;
 let scoreBoard = 0;
-let questionNum = 0;
+let questionNum = -1;
 
 // Model functions? --------------------------------------------------------------------------------------------------------------------------
 function selectRandomQ() { 
-  let desiredQuestionNum = 10; 
-  for (let i = 0; i < desiredQuestionNum; i++) { 
-    do {  
-      randomQ = Math.floor(Math.random() * questionBank.length); 
-    } 
-    while (pickedQs());  
-     askedQs.push(randomQ); 
-  } 
-  function pickedQs() { 
-    for (let i = 0; i < askedQs.length; i++) { 
-      if (askedQs[i] === randomQ) { 
-        return true; 
-      } 
-    } 
+    let desiredQuestionNum = 10; 
+        for (let i = 0; i < desiredQuestionNum; i++) { 
+            do {  
+                randomQ = Math.floor(Math.random() * questionBank.length); 
+            } 
+            while (pickedQs());  
+            askedQs.push(randomQ); 
+        } 
+    function pickedQs() { 
+        for (let i = 0; i < askedQs.length; i++) { 
+            if (askedQs[i] === randomQ) { 
+                return true; 
+            } 
+        }    
     return false; 
-  } 
-  console.log(askedQs); 
+    } 
+    console.log(askedQs); 
 } 
 
 function changeQNum() {
     console.log("question num changed");
-    return questionNum ++;
+    questionNum ++,
+    $('.questionNum').text(questionNum+1);
 }
 
 function changeScoreBoard() {
     console.log("score changed");
     return scoreBoard ++;
 }
+
+function scoreBoardUpdated() {
+    changeScoreBoard();
+    $('.scoreBoard').text(scoreBoard);
+}
+
 
 // problem function
 function validateAns() {
@@ -42,7 +49,7 @@ function validateAns() {
     let userChoice = $('input[type=radio]:checked').val();
     
     if (userChoice === correctAns) {
-        changeScoreBoard();
+        scoreBoardUpdated();
         displayCorrectAnsRationale();
     } 
     else {
@@ -58,6 +65,9 @@ function resetValues() {
 }
 
 // View functions? -----------------------------------------------------------------------------------------------------------------------------
+function renderScreenView(keyword) {
+    return$(`#screenView`).html(keyword);
+}
 
 function renderQs() {
     console.log(questionBank[askedQs[n]]);
@@ -90,6 +100,7 @@ function renderQs() {
     else {
         $('#quiz').hide();
         displayResults();
+        $('.questionNum').text(10);
     }
 }
 
@@ -150,6 +161,7 @@ function launchQuiz() {
     $('#results').hide();
     renderQs();
     changeQNum();
+    $('.questionNumber').text(1);
     });
 }
 
@@ -157,6 +169,7 @@ function handleUserSubmitAns() {
     console.log("ready to handleUserSubmitAns");
     $('#quiz').on('click', '#showRationale', function(event) {
         event.preventDefault();
+        $('#showRationale').hide();
         let userChoice = $('input[type=radio]:checked').val();
         validateAns(userChoice); 
     });
@@ -165,7 +178,9 @@ function handleUserSubmitAns() {
 function nextQuestion() {
     $('#rationale').on('click', '#nextQ', function(event) {
         event.preventDefault();
+        console.log("nextQuestion firing");
         n ++;
+        console.log(n);
         changeQNum();
         renderQs();
     });
@@ -177,7 +192,6 @@ function displayResults() {
         console.log('displaying results!')
         $('#rationale').hide(); 
         $('results').show();
-        restartQuiz();
         return $(`#results`).html(
         `<label class="resultsPage">
             <img src=""> 
@@ -206,6 +220,7 @@ function startQuiz() {
     handleUserSubmitAns();
     nextQuestion();
     displayResults();
+    restartQuiz();
 }
 
 //get it and go

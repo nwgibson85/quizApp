@@ -7,16 +7,18 @@ const questionBank = [
         c: "Sperm whale",
         d: "Finback whale"},
     correctAnswer: "Finback whale",
-    rationale: "https://ocean.si.edu/sites/default/files/styles/photo_full/public/what-is-the-largest-whale-comparison-chart-full.jpg?itok=NZ1sn__o The Finback whale is a streamline version of the Blue whale, build for speed at enormous size."},
+    rationale: "The Finback whale is a streamline version of the Blue whale, build for speed at enormous size.",
+    img: 'https://ocean.si.edu/sites/default/files/styles/photo_full/public/what-is-the-largest-whale-comparison-chart-full.jpg?itok=NZ1sn__o'},
     
-    {question: '“Bird brain” is commonly used as a derogatory term for lack of intelligence, which of the following birds lends credence to this term with a brain smaller than its eye?',
+    {question: '\“Bird brain\” is commonly used as a derogatory term for lack of intelligence, which of the following birds lends credence to this term with a brain smaller than its eye?',
     choices: {
         a: "Canary",
         b: "Ostrich",
         c: "Greater yellow-headed vulture",
         d: "Toucan"},
     correctAnswer: "Ostrich",
-    rationale: "This is not the most scientific depiction, however it does a great job of demonstrating the size comparison.  https://funyourmind.wordpress.com/2016/08/31/ostrichs-eyes-are-bigger-than-its-brain/"},
+    rationale: "This is not the most scientific depiction, however it does a great job of demonstrating the size comparison.",  
+    img: 'https://funyourmind.wordpress.com/2016/08/31/ostrichs-eyes-are-bigger-than-its-brain'},
     
     {question: "Which of the following animals is the fastest runner?",
     choices: {
@@ -43,7 +45,8 @@ const questionBank = [
         c: "a Mountain lion",
         d: "a Triceratops"},
     correctAnswer: "an African elephant",
-    rationale: "../../images/species/m/megatherium-size.jpg that is an amazing image, and it is theorized that the avacado seed grew to its size because Giant ground sloths would swallow it whole and spread the trees with their scat!"},
+    rationale: "This is an amazing image.  It is theorized that the avacado seed grew to its size because Giant ground sloths would swallow it whole and spread the trees with their scat!",
+    img: '../../images/species/m/megatherium-size.jpg'},
     
     {question: "The platypus is one of two types of mammals that lays eggs, which of the following is the other one?",
     choices: {
@@ -52,7 +55,7 @@ const questionBank = [
         c: "Panda",
         d: "Echidna"},
     correctAnswer: "Echidna",
-    rationale: "https://en.wikipedia.org/wiki/Echidna check it out there are multiple sepcies of echidna and they all lay eggs then hold them in a pouch to keep them warm."},
+    rationale: "check it out there are multiple sepcies of echidna and they all lay eggs then hold them in a pouch to keep them warm."},
     
     {question: "Which of the following is the largest rodent?",
     choices: {
@@ -61,7 +64,7 @@ const questionBank = [
         c: "Giant Hutia",
         d: "North American beaver"},
     correctAnswer: "Capybara",
-    rationale: "https://en.wikipedia.org/wiki/List_of_largest_rodents Capybara can be domesticated and can learn more verbal commands than most dogs."},
+    rationale: "Capybara can be domesticated and can learn more verbal commands than most dogs."},
    
     {question: "How fast can an Ostrich run?",
     choices: {
@@ -70,7 +73,7 @@ const questionBank = [
         c: "43mph",
         d: "53mph"},
     correctAnswer: "43mph",
-    rationale: "http://www.speedofanimals.com/animals/ostrich?h=1.52 That is one fast bird."},
+    rationale: "That is one fast bird."},
     
     {question: "Which of the following animals only requires 20-40 seconds to empty their bladder?",
     choices: {
@@ -79,7 +82,7 @@ const questionBank = [
         c: "Okapi",
         d: "All of the above"},
     correctAnswer: "All of the above",
-    rationale: "https://arxiv.org/abs/1310.3737 crazy to know that a mouse and elephant empty their bladders in roughly the same amount of time."},
+    rationale: "Crazy to know that a mouse and elephant empty their bladders in roughly the same amount of time.  It as been coined the law of urination."},
     
     {question: "How many eggs does a Tiger shark lay on average?",
     choices: {
@@ -88,7 +91,7 @@ const questionBank = [
         c: "10",
         d: "None of the above"},
     correctAnswer: "None of the above",
-    rationale: "https://en.wikipedia.org/wiki/Tiger_shark Tiger Sharks have live births!"},
+    rationale: "Tiger Sharks have live births!"},
     
     {question: "Which mammal experiences the longest pregnancy?",
     choices: {
@@ -97,7 +100,7 @@ const questionBank = [
         c: "Blue whale",
         d: "Narwhal"},
     correctAnswer: "Elephant",
-    rationale: "https://en.wikipedia.org/wiki/List_of_mammalian_gestation_durations elephant pregnancy lasts longer than two human pregnancies"},
+    rationale: "Elephant pregnancy lasts longer than two human pregnancies"},
     
     {question: "Which animal has the longest tusk or tooth?",
     choices: {
@@ -106,7 +109,7 @@ const questionBank = [
         c: "Hippo",
         d: "Walrus"},
     correctAnswer: "Narwhal",
-    rationale: "https://en.wikipedia.org/wiki/Narwhal that horn is actually a tooth sticking out through their head!"},
+    rationale: "That \'horn\' is actually a tooth sticking out through their head!"},
     
     {question: "Which Primate has a prehensile tail?",
     choices: {
@@ -115,7 +118,7 @@ const questionBank = [
         c: "Spider monkey",
         d: "Ring tailed lemur"},
     correctAnswer: "Spider monkey",
-    rationale: "https://en.wikipedia.org/wiki/Spider_monkey watch some videos on these monkeys.  They are fantastic climbers thanks in large part to their tails."},
+    rationale: "Watch some videos on these monkeys.  They are fantastic climbers thanks in large part to their tails."},
     
     {question: "The Green Basilisk lizard is commonly called the Jesus Christ lizard.  What can this lizard do to earn the name?",
     choices: {
@@ -124,7 +127,7 @@ const questionBank = [
         c: "Walks on water.",
         d: "Can cure blindness."},
     correctAnswer: "Walks on water.",
-    rationale: "https://www.nationalgeographic.com/animals/reptiles/g/green-basilisk-lizard/ Runs on water actually!"},
+    rationale: "Runs on water actually!"},
     
     {question: "Which animal has a blue tongue?",
     choices: {
@@ -133,7 +136,7 @@ const questionBank = [
         c: "Okapi",
         d: "All of the above"},
     correctAnswer: "All of the above",
-    rationale: "http://www.arielesieling.com/blog/2016/animals-with-blue-tongues The only other animal with a blue tongue is the giraffe which is a close relative of the Okapi."},
+    rationale: "The only other animal with a blue tongue is the giraffe which is a close relative of the Okapi."},
     
     {question: "How fast can a Mako shark swim?",
     choices: {
@@ -142,7 +145,7 @@ const questionBank = [
         c: "47mph",
         d: "32mph"},
     correctAnswer: "42mph",
-    rationale: "https://en.wikipedia.org/wiki/Shortfin_mako_shark Toothy water bullet!"},
+    rationale: "Toothy water bullet!"},
     
     {question: "How high can a jaguar jump?",
     choices: {
@@ -151,7 +154,7 @@ const questionBank = [
         c: "8 feet",
         d: "14 feet"},
     correctAnswer: "10 feet",
-    rationale: "http://bedtimemath.org/fun-math-animals-jumping/ they could jump up and land on a basketball rim."},
+    rationale: "They could jump up and land on a basketball rim."},
 
     {question: "Tiger beetles are the fastest running insects clocking a blazing 5.6 mph.  This is about 125 body length per second.  If a Tiger beetle could maintain that speed while the size of a cheetah how fast would it be running?",
     choices: {
@@ -187,5 +190,5 @@ const questionBank = [
         c: "Tazmanian Devil",
         d: "Naked mole-rat"},
     correctAnswer: "Armodillo",
-    rationale: "https://video.nationalgeographic.com/video/0000015a-3d7c-d7df-a9df-fffc39e90002 armored bois like to make 4 exact replicas."}
+    rationale: "armored bois like to make four exact replicas."}
 ];

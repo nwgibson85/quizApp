@@ -7,6 +7,7 @@
 h1 {
     font-size: 60px;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
@@ -15,7 +16,7 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
-    height: 200px;
+    height: 100%;
     padding: 20px;
     border: none;
     background-color: rgb(29, 83, 62);   
