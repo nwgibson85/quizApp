@@ -168,7 +168,7 @@ const questionBank = [
         b: "Rhinos and Hippos. (White and Black Rhinos, pigmy and standard Hippos.",
         c: "Bears (Grizzly bear, Polar bear, Black bear, Sun bear.",
         d: "Marine Mammals (Narwhal, Beluga whale, Orca, Short-finned Pilot whales."},
-    correctAnswer: "Marine Mammals (Narwal, Beluga whale, Orca, Short-finned Pilot whales.",
+    correctAnswer: "Marine Mammals (Narwhal, Beluga whale, Orca, Short-finned Pilot whales.",
     rationale: "Marine Mammals, it is mentioned that elephants may experience menopause as well, but not confirmed as of yet.  The exceptionally long life span of marine mammals (some exceeding 100+ years) makes menopause necessary."},
     
     {question: "What is the airspeed velocity of an unladen swallow?",

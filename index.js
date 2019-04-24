@@ -35,10 +35,12 @@ function changeScoreBoard() {
     return scoreBoard ++;
 }
 
+// problem function
 function validateAns() {
     console.log('validateAns fired');
     let correctAns = questionBank[askedQs[n]].correctAnswer;
     let userChoice = $('input[type=radio]:checked').val();
+    
     if (userChoice === correctAns) {
         changeScoreBoard();
         displayCorrectAnsRationale();
@@ -56,6 +58,7 @@ function resetValues() {
 }
 
 // View functions? -----------------------------------------------------------------------------------------------------------------------------
+
 function renderQs() {
     console.log(questionBank[askedQs[n]]);
     console.log('Questions have been rendered');
@@ -120,7 +123,7 @@ function displayIncorrectAnsRationale() {
         return $(`#rationale`).html(
             `<label class="ansRationale">
                 <img class='ansIncorrect-Img' src="https://i.kym-cdn.com/photos/images/original/000/222/136/1324684271001.jpg" alt='monkey with hand over face in shame for incorrect answer.'>
-                <span id="rationale-text">Incorrect, the correct answer is: ${questionBank[askedQs[n]].correctanswer}</span>
+                <span id="rationale-text">Incorrect, the correct answer is: ${questionBank[askedQs[n]].correctAnswer}</span>
                 <span id="rationale-link">${questionBank[askedQs[n]].rationale}</span>
                 <button class='button' id="nextQ">next question</button>
         </label>`);
@@ -129,7 +132,7 @@ function displayIncorrectAnsRationale() {
         return $(`#rationale`).html(
         `<label class="ansRationale">
             <img class='ansIncorrect-Img' src="https://i.kym-cdn.com/photos/images/original/000/222/136/1324684271001.jpg" alt='monkey with hand over face in shame for incorrect answer.>
-            <span id="rationale-text">Incorrect, the correct answer is: ${questionBank[askedQs[n]].correctanswer}</span>
+            <span id="rationale-text">Incorrect, the correct answer is: ${questionBank[askedQs[n]].correctAnswer}</span>
             <span id="rationale-link">${questionBank[askedQs[n]].rationale}</span>
             <button class='button' id="displayRes">Results</button>
         </label>`
@@ -138,25 +141,37 @@ function displayIncorrectAnsRationale() {
 } 
 
 //Controller functions? event listeners -----------------------------------------------------------------------------------------------------------------------------
+function launchQuiz() {
+    $('#begin').click(function(event) {
+    console.log('begin has been clicked')
+    $('#quiz').show();
+    $('#startQ').hide();
+    $('#rationale').hide();
+    $('#results').hide();
+    renderQs();
+    changeQNum();
+    });
+}
+
 function handleUserSubmitAns() {
     console.log("ready to handleUserSubmitAns");
-    $('fieldset').on('click', '#showRationale', function(event) {
+    $('#quiz').on('click', '#showRationale', function(event) {
         event.preventDefault();
         let userChoice = $('input[type=radio]:checked').val();
         validateAns(userChoice); 
     });
 }
 
-function restartQuiz() {
-    console.log("Quiz has restarted");
-    $('#results').on('click', '#restartQ', function(event) {
+function nextQuestion() {
+    $('#rationale').on('click', '#nextQ', function(event) {
         event.preventDefault();
-        resetValues();
-        selectRandomQ();
+        n ++;
+        changeQNum();
         renderQs();
     });
 }
 
+// potential issue. 
 function displayResults() {
     $('#rationale').on('click', '#displayRes', function(event) {
         console.log('displaying results!')
@@ -173,28 +188,17 @@ function displayResults() {
     });
 }
 
-function launchQuiz() {
-    $('#begin').click(function(event) {
-    console.log('begin has been clicked')
-    $('#quiz').show();
-    $('#startQ').hide();
-    $('#rationale').hide();
-    $('#results').hide();
-    renderQs();
-    changeQNum();
-    });
-}
-
-function nextQuestion() {
-    $('#rationale').on('click', '#nextQ', function(event) {
+function restartQuiz() {
+    console.log("Quiz has restarted");
+    $('#results').on('click', '#restartQ', function(event) {
         event.preventDefault();
-        n ++;
-        changeQNum();
+        resetValues();
+        selectRandomQ();
         renderQs();
     });
 }
 
-//calling all event listeners
+//calling all event listeners ------------------------------------------------------------------------------------------------------------------
 function startQuiz() {
     console.log("Quiz has begun")
     selectRandomQ();
