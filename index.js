@@ -7,20 +7,20 @@ let questionNum = -1;
 // Model functions? --------------------------------------------------------------------------------------------------------------------------
 function selectRandomQ() { 
     let desiredQuestionNum = 10; 
-        for (let i = 0; i < desiredQuestionNum; i++) { 
-            do {  
-                randomQ = Math.floor(Math.random() * questionBank.length); 
-            } 
-            while (pickedQs());  
-            askedQs.push(randomQ); 
+    for (let i = 0; i < desiredQuestionNum; i++) { 
+        do {  
+            randomQ = Math.floor(Math.random() * questionBank.length); 
         } 
+        while (pickedQs());  
+        askedQs.push(randomQ); 
+    } 
     function pickedQs() { 
         for (let i = 0; i < askedQs.length; i++) { 
             if (askedQs[i] === randomQ) { 
                 return true; 
             } 
         }    
-    return false; 
+        return false; 
     } 
     console.log(askedQs); 
 } 
@@ -106,14 +106,18 @@ function renderQs() {
 
 function displayCorrectAnsRationale() {
     console.log('displayCorrectAns fired');
+    console.log(n);
+    console.log(askedQs.length)
+    console.log(askedQs.length -1);
     $('#rationale').show();
-    if (n < askedQs.length) {
+    if (n < askedQs.length -1) {
         return $(`#rationale`).html(
         `<label class="ansRationale">
             <img class="ansCorrect-Img" src="https://i.chzbgr.com/full/4264471296/h453DE7D0" alt='monkey giving a thumbs up for correct answer!'>
             <span id="rationale-text">Correct!</span>
             <span id="rationale-link">${questionBank[askedQs[n]].rationale}</span>
             <button class='button' id="nextQ">next question</button>
+            <img class='rationale-img'  src="${questionBank[askedQs[n]].img}">
         </label>`);
     }
     else { 
@@ -130,7 +134,7 @@ function displayCorrectAnsRationale() {
 function displayIncorrectAnsRationale() {
     console.log('displayIncorrectAns fired')
     $('#rationale').show(); 
-    if (n < askedQs.length) {
+    if (n < askedQs.length -1) {
         return $(`#rationale`).html(
             `<label class="ansRationale">
                 <img class='ansIncorrect-Img' src="https://i.kym-cdn.com/photos/images/original/000/222/136/1324684271001.jpg" alt='monkey with hand over face in shame for incorrect answer.'>
@@ -190,8 +194,9 @@ function nextQuestion() {
 function displayResults() {
     $('#rationale').on('click', '#displayRes', function(event) {
         console.log('displaying results!')
+        $('#quiz').hide();
         $('#rationale').hide(); 
-        $('results').show();
+        $('#results').show();
         return $(`#results`).html(
         `<label class="resultsPage">
             <img src=""> 
@@ -206,9 +211,7 @@ function restartQuiz() {
     console.log("Quiz has restarted");
     $('#results').on('click', '#restartQ', function(event) {
         event.preventDefault();
-        resetValues();
-        selectRandomQ();
-        renderQs();
+        location.reload();
     });
 }
 

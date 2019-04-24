@@ -10,7 +10,7 @@ const questionBank = [
     rationale: "The Finback whale is a streamline version of the Blue whale, build for speed at enormous size.",
     img: 'https://ocean.si.edu/sites/default/files/styles/photo_full/public/what-is-the-largest-whale-comparison-chart-full.jpg?itok=NZ1sn__o'},
     
-    {question: '\“Bird brain\” is commonly used as a derogatory term for lack of intelligence, which of the following birds lends credence to this term with a brain smaller than its eye?',
+    {question: "\'Bird brain\' is commonly used as a derogatory term for lack of intelligence, which of the following birds lends credence to this term with a brain smaller than its eye?",
     choices: {
         a: "Canary",
         b: "Ostrich",
@@ -18,7 +18,7 @@ const questionBank = [
         d: "Toucan"},
     correctAnswer: "Ostrich",
     rationale: "This is not the most scientific depiction, however it does a great job of demonstrating the size comparison.",  
-    img: 'https://funyourmind.wordpress.com/2016/08/31/ostrichs-eyes-are-bigger-than-its-brain'},
+    img: 'http://2il.org/wp-content/uploads/2015/03/An-eye-of-ostrich-is-big-from-its-brain.jpg'},
     
     {question: "Which of the following animals is the fastest runner?",
     choices: {
@@ -38,7 +38,7 @@ const questionBank = [
     correctAnswer: "3",
     rationale: "Three hours a day roughly, and they only require 30 minutes in order to meet their needs for REM sleep."},
     
-    {question: "The Giant ground sloth roamed the Americas, and is an ancient cousin to the two and three toed sloths that live in the American Rainforests.  Which answer below is the closest to the Giant ground sloth’s size? ",
+    {question: "The Giant ground sloth roamed the Americas, and is an ancient cousin to the two and three toed sloths that live in the American Rainforests.  Which answer below is the closest to the Giant ground sloth\’s size? ",
         choices: {
         a: "a compact car",
         b: "an African elephant",
@@ -46,7 +46,7 @@ const questionBank = [
         d: "a Triceratops"},
     correctAnswer: "an African elephant",
     rationale: "This is an amazing image.  It is theorized that the avacado seed grew to its size because Giant ground sloths would swallow it whole and spread the trees with their scat!",
-    img: '../../images/species/m/megatherium-size.jpg'},
+    img: 'http://www.prehistoric-wildlife.com/images/species/m/megatherium-size.jpg'},
     
     {question: "The platypus is one of two types of mammals that lays eggs, which of the following is the other one?",
     choices: {
