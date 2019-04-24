@@ -115,7 +115,7 @@ function displayCorrectAnsRationale() {
     if (n < askedQs.length) {
         return $(`#rationale`).html(
         `<label class="ansRationale">
-            <img src="https://i.chzbgr.com/full/4264471296/h453DE7D0">
+            <img class="ansCorrectImg" src="https://i.chzbgr.com/full/4264471296/h453DE7D0" alt='monkey giving a thumbs up for correct answer!'>
             <span id="rationale-text">Correct!</span>
             <span id="rationale-link">${questionBank[askedQs[n]].rationale}</span>
             <button class='button' id="nextQ">next question</button>
@@ -124,7 +124,7 @@ function displayCorrectAnsRationale() {
     else { 
         return $(`#rationale`).html(
         `<label class="ansRationale">
-            <img src="https://i.chzbgr.com/full/4264471296/h453DE7D0">
+            <img class="ansCorrectImg" src="https://i.chzbgr.com/full/4264471296/h453DE7D0" alt='monkey giving a thumbs up for correct answer!'>
             <span id="rationale-text">Correct!</span>
             <span id="rationale-link">${questionBank[askedQs[n]].rationale}</span>
             <button class='button' id="displayRes">Results</button>
@@ -139,7 +139,7 @@ function displayIncorrectAnsRationale() {
     if (n < askedQs.length) {
         return $(`#rationale`).html(
             `<label class="ansRationale">
-                <img src="https://i.kym-cdn.com/photos/images/original/000/222/136/1324684271001.jpg">
+                <img class='ansIncorrectImg' src="https://i.kym-cdn.com/photos/images/original/000/222/136/1324684271001.jpg" alt='monkey with hand over face in shame for incorrect answer.'>
                 <span id="rationale-text">Incorrect, the correct answer is: ${questionBank[askedQs[n]].correctanswer}</span>
                 <span id="rationale-link">${questionBank[askedQs[n]].rationale}</span>
                 <button class='button' id="nextQ">next question</button>
@@ -148,7 +148,7 @@ function displayIncorrectAnsRationale() {
     else {
         return $(`#rationale`).html(
         `<label class="ansRationale">
-            <img src="https://i.kym-cdn.com/photos/images/original/000/222/136/1324684271001.jpg">
+            <img class='ansIncorrectImg' src="https://i.kym-cdn.com/photos/images/original/000/222/136/1324684271001.jpg" alt='monkey with hand over face in shame for incorrect answer.>
             <span id="rationale-text">Incorrect, the correct answer is: ${questionBank[askedQs[n]].correctanswer}</span>
             <span id="rationale-link">${questionBank[askedQs[n]].rationale}</span>
             <button class='button' id="displayRes">Results</button>
