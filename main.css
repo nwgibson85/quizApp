@@ -38,7 +38,18 @@ button {
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 40px;
-    
+}
+
+section {
+
+}
+
+label {
+
+}
+
+.radio {
+    /* radio button img https://i.imgflip.com/23aeq6.jpg */
 }
   
 button:hover {

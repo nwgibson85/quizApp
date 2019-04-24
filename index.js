@@ -1,7 +1,6 @@
 let askedQs = [];
 let randomQ;
 
-
 function selectRandomQ() { 
   let desiredQuestionNum = 10; 
   for (let i = 0; i < desiredQuestionNum; i++) { 
@@ -27,9 +26,11 @@ let displayedQ = questionBank[askedQs[n]];
 
 function renderQs() {
   console.log(questionBank[askedQs[n]]);
-  console.log('renderingQuestions');
+  console.log('Questions have been rendered');
+  handleUserSubmitAns();
   if (n < askedQs.length) {
-   return $(`#quiz`).html(`<h2 id='displayQuestion'>${questionBank[askedQs[n]].question}</h2>
+    $('#rationale').hide();
+    return $(`#quiz`).html(`<h2 id='displayQuestion'>${questionBank[askedQs[n]].question}</h2>
     <form>
       <fieldset class="choices">
         <label class="choices-a">
@@ -48,7 +49,7 @@ function renderQs() {
         <input type="radio" value="${questionBank[askedQs[n]].choices.d}" name="choice" required>
         <span>${questionBank[askedQs[n]].choices.d}</span>
         </label>
-        <button id='nextQuestion' class='button'>next question</button>
+        <button id='showRationale' class='button'>see answer</button>
       </fieldset>
     </form>`);
   }
@@ -59,7 +60,7 @@ function renderQs() {
 }
 
 function launchQuiz() {
-    $('#begin').click(function (event) {
+    $('#begin').click(function(event) {
     console.log('begin has been clicked')
     $('#quiz').show();
     $('#startQ').hide();
@@ -67,6 +68,7 @@ function launchQuiz() {
     $('#results').hide();
     renderQs();
     changeQNum();
+    handleUserSubmitAns();
   });
 }
 
@@ -74,96 +76,111 @@ let scoreBoard = 0;
 let questionNum = 0;
 
 function changeQNum() {
-    questionNum ++;
-  $('.questionNum').text(questionNum+1);
+    console.log("question num changed")
+    return questionNum ++;
+    
 }
 
 function changeScoreBoard() {
-  scoreBoard ++;
-  $('.score').text(score+1);
+    console.log("score changed")
+    return scoreBoard ++;
 }
 
 function handleUserSubmitAns() {
-  $('fieldset').on('click', '#nextQuestion', function(event) {
+    console.log("ready to handleUserSubmitAns");
+    $('fieldset').on('click', '#showRationale', function(event) {
     event.preventDefault();
-    console.log("user answer handled");
-    $('#rationale').show();
-    $('#startQ').hide();
-    $('quiz').hide();
     let userChoice = $('input[type=radio]:checked').val();
-      // $('input[type=radio]:checked').attr('checked', false);
       validateAns(userChoice); 
- });
+    });
 }
 
-function validateAns(userChoice){
+function validateAns() {
+    console.log('validateAns fired');
   let correctAns = questionBank[askedQs[n]].correctAnswer;
+  let userChoice = $('input[type=radio]:checked').val();
   if (userChoice === correctAns) {
     changeScoreBoard();
-    displayRationale(true, correctAns);
+    displayCorrectAnsRationale();
   } 
   else {
-    displayRationale(false, correctAns);
+    displayIncorrectAnsRationale();
   }
 }
 
-function rationaleDisplay() {
+function displayCorrectAnsRationale() {
+    console.log('displayCorrectAns fired');
     $('#rationale').show();
-    if (true){
-        $(".ansRationale img").attr("src", 'https://i.chzbgr.com/full/4264471296/h453DE7D0');
-        $(".ansRationale #rationale-text").text("Correct!");
-    }
-    else {
-        $(".ansRationale img").attr("src", 'https://i.kym-cdn.com/photos/images/original/000/222/136/1324684271001.jpg');
-        $(".ansRationale #rationale-text").text(`Incorrect, the correct answer was: ${questionBank[askedQs[n]].correctanswer}`);
-    }
-}
-
-
-function displayRationale(statusFlag, answer){
-  console.log('displaying rationale');
-  $('#quiz').hide();
+    nextQuestion();
     if (n < askedQs.length) {
-        rationaleDisplay(true);
         return $(`#rationale`).html(
         `<label class="ansRationale">
-            <img src="">
-            <span id="rationale-text"></span>
+            <img src="https://i.chzbgr.com/full/4264471296/h453DE7D0">
+            <span id="rationale-text">Correct!</span>
             <span id="rationale-link">${questionBank[askedQs[n]].rationale}</span>
             <button class='button' id="nextQ">next question</button>
         </label>`);
     }
-    else {
-        rationaleDisplay(false);
+    else { 
         return $(`#rationale`).html(
         `<label class="ansRationale">
-            <img src="">
-            <span id="rationale-text"></span>
+            <img src="https://i.chzbgr.com/full/4264471296/h453DE7D0">
+            <span id="rationale-text">Correct!</span>
             <span id="rationale-link">${questionBank[askedQs[n]].rationale}</span>
             <button class='button' id="displayRes">Results</button>
         </label>`);
     }
 }
+    
+function displayIncorrectAnsRationale() {
+    console.log('displayIncorrectAns fired')
+    $('#rationale').show();
+    nextQuestion();
+    if (n < askedQs.length) {
+        return $(`#rationale`).html(
+            `<label class="ansRationale">
+                <img src="https://i.kym-cdn.com/photos/images/original/000/222/136/1324684271001.jpg">
+                <span id="rationale-text">Incorrect, the correct answer is: ${questionBank[askedQs[n]].correctanswer}</span>
+                <span id="rationale-link">${questionBank[askedQs[n]].rationale}</span>
+                <button class='button' id="nextQ">next question</button>
+        </label>`);
+    }
+    else {
+        return $(`#rationale`).html(
+        `<label class="ansRationale">
+            <img src="https://i.kym-cdn.com/photos/images/original/000/222/136/1324684271001.jpg">
+            <span id="rationale-text">Incorrect, the correct answer is: ${questionBank[askedQs[n]].correctanswer}</span>
+            <span id="rationale-link">${questionBank[askedQs[n]].rationale}</span>
+            <button class='button' id="displayRes">Results</button>
+        </label>`
+        );
+    }
+} 
+
 
 function nextQuestion() {
   $('#rationale').on('click', '#nextQ', function(event) {
+    event.preventDefault();
     n ++;
+    handleUserSubmitAns();
+    changeQNum();
     renderQs();
-    changeQuestionNumber();
-  })
+  });
 }
 
 function displayResults() {
   $('#rationale').on('click', '#displayRes', function(event) {
       console.log('displaying results!')
-      $('#rationale').hide();
+      $('#rationale').hide(); 
+      $('results').show();
+      restartQuiz();
       return $(`#results`).html(
         `<label class="resultsPage">
             <img src=""> 
-            <span id="tryAgain">Give the quiz another attempt!</span>
+            <span id=tryAgain">Check your score below, and if you dare give the quiz another attempt!</span>
             <button type="submit" id="restartQ" class='button'>Restart Quiz</button>
           </label>`);
-      $('results').show(); // if score equals x/10 provide pic the correlates.
+      // if score equals x/10 provide pic the correlates.
   });
 }
 
@@ -190,5 +207,3 @@ function startQuiz() {
   launchQuiz();
 }
 $(startQuiz);
-
-// radio button img https://i.imgflip.com/23aeq6.jpg

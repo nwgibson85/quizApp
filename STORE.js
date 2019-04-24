@@ -6,8 +6,8 @@ const questionBank = [
         b: "Humpback whale",
         c: "Sperm whale",
         d: "Finback whale"},
-    correctAnswer: "c",
-    rationale: "https://ocean.si.edu/sites/default/files/styles/photo_full/public/what-is-the-largest-whale-comparison-chart-full.jpg?itok=NZ1sn__o"},
+    correctAnswer: "Finback whale",
+    rationale: "https://ocean.si.edu/sites/default/files/styles/photo_full/public/what-is-the-largest-whale-comparison-chart-full.jpg?itok=NZ1sn__o The Finback whale is a streamline version of the Blue whale, build for speed at enormous size."},
     
     {question: '“Bird brain” is commonly used as a derogatory term for lack of intelligence, which of the following birds lends credence to this term with a brain smaller than its eye?',
     choices: {
@@ -15,7 +15,7 @@ const questionBank = [
         b: "Ostrich",
         c: "Greater yellow-headed vulture",
         d: "Toucan"},
-    correctAnswer: "b",
+    correctAnswer: "Ostrich",
     rationale: "This is not the most scientific depiction, however it does a great job of demonstrating the size comparison.  https://funyourmind.wordpress.com/2016/08/31/ostrichs-eyes-are-bigger-than-its-brain/"},
     
     {question: "Which of the following animals is the fastest runner?",
@@ -24,7 +24,7 @@ const questionBank = [
         b: "Hippo",
         c: "Cow",
         d: "Polar bear"},
-    correctAnswer: "a",
+    correctAnswer: "Human",
     rationale: "Humans have been clocked running as fast as 28mph, and in this list are the fastest.  Cows surprisingly can reach speeds of 25 mph.  Polar bears 20mph and Hippos 19mph."},
     
     {question: "How many hours does a horse sleep in a 24 hour period?",
@@ -33,7 +33,7 @@ const questionBank = [
         b: "4",
         c: "3",
         d: "6"},
-    correctAnswer: "c",
+    correctAnswer: "3",
     rationale: "Three hours a day roughly, and they only require 30 minutes in order to meet their needs for REM sleep."},
     
     {question: "The Giant ground sloth roamed the Americas, and is an ancient cousin to the two and three toed sloths that live in the American Rainforests.  Which answer below is the closest to the Giant ground sloth’s size? ",
@@ -42,8 +42,8 @@ const questionBank = [
         b: "an African elephant",
         c: "a Mountain lion",
         d: "a Triceratops"},
-    correctAnswer: "b",
-    rationale: "../../images/species/m/megatherium-size.jpg"},
+    correctAnswer: "an African elephant",
+    rationale: "../../images/species/m/megatherium-size.jpg that is an amazing image, and it is theorized that the avacado seed grew to its size because Giant ground sloths would swallow it whole and spread the trees with their scat!"},
     
     {question: "The platypus is one of two types of mammals that lays eggs, which of the following is the other one?",
     choices: {
@@ -51,8 +51,8 @@ const questionBank = [
         b: "Pangolin",
         c: "Panda",
         d: "Echidna"},
-    correctAnswer: "d",
-    rationale: "https://en.wikipedia.org/wiki/Echidna"},
+    correctAnswer: "Echidna",
+    rationale: "https://en.wikipedia.org/wiki/Echidna check it out there are multiple sepcies of echidna and they all lay eggs then hold them in a pouch to keep them warm."},
     
     {question: "Which of the following is the largest rodent?",
     choices: {
@@ -60,8 +60,8 @@ const questionBank = [
         b: "Capybara",
         c: "Giant Hutia",
         d: "North American beaver"},
-    correctAnswer: "b",
-    rationale: "https://en.wikipedia.org/wiki/List_of_largest_rodents"},
+    correctAnswer: "Capybara",
+    rationale: "https://en.wikipedia.org/wiki/List_of_largest_rodents Capybara can be domesticated and can learn more verbal commands than most dogs."},
    
     {question: "How fast can an Ostrich run?",
     choices: {
@@ -69,8 +69,8 @@ const questionBank = [
         b: "33mph",
         c: "43mph",
         d: "53mph"},
-    correctAnswer: "c",
-    rationale: "http://www.speedofanimals.com/animals/ostrich?h=1.52"},
+    correctAnswer: "43mph",
+    rationale: "http://www.speedofanimals.com/animals/ostrich?h=1.52 That is one fast bird."},
     
     {question: "Which of the following animals only requires 20-40 seconds to empty their bladder?",
     choices: {
@@ -78,8 +78,8 @@ const questionBank = [
         b: "Mouse",
         c: "Okapi",
         d: "All of the above"},
-    correctAnswer: "d",
-    rationale: "https://arxiv.org/abs/1310.3737"},
+    correctAnswer: "All of the above",
+    rationale: "https://arxiv.org/abs/1310.3737 crazy to know that a mouse and elephant empty their bladders in roughly the same amount of time."},
     
     {question: "How many eggs does a Tiger shark lay on average?",
     choices: {
@@ -87,8 +87,8 @@ const questionBank = [
         b: "15",
         c: "10",
         d: "None of the above"},
-    correctAnswer: "d",
-    rationale: "https://en.wikipedia.org/wiki/Tiger_shark"},
+    correctAnswer: "None of the above",
+    rationale: "https://en.wikipedia.org/wiki/Tiger_shark Tiger Sharks have live births!"},
     
     {question: "Which mammal experiences the longest pregnancy?",
     choices: {
@@ -96,8 +96,8 @@ const questionBank = [
         b: "Hippo",
         c: "Blue whale",
         d: "Narwhal"},
-    correctAnswer: "a",
-    rationale: "https://en.wikipedia.org/wiki/List_of_mammalian_gestation_durations"},
+    correctAnswer: "Elephant",
+    rationale: "https://en.wikipedia.org/wiki/List_of_mammalian_gestation_durations elephant pregnancy lasts longer than two human pregnancies"},
     
     {question: "Which animal has the longest tusk or tooth?",
     choices: {
@@ -105,8 +105,8 @@ const questionBank = [
         b: "Narwhal",
         c: "Hippo",
         d: "Walrus"},
-    correctAnswer: "b",
-    rationale: "https://en.wikipedia.org/wiki/Narwhal"},
+    correctAnswer: "Narwhal",
+    rationale: "https://en.wikipedia.org/wiki/Narwhal that horn is actually a tooth sticking out through their head!"},
     
     {question: "Which Primate has a prehensile tail?",
     choices: {
@@ -114,8 +114,8 @@ const questionBank = [
         b: "Orangutan",
         c: "Spider monkey",
         d: "Ring tailed lemur"},
-    correctAnswer: "c",
-    rationale: "https://en.wikipedia.org/wiki/Spider_monkey"},
+    correctAnswer: "Spider monkey",
+    rationale: "https://en.wikipedia.org/wiki/Spider_monkey watch some videos on these monkeys.  They are fantastic climbers thanks in large part to their tails."},
     
     {question: "The Green Basilisk lizard is commonly called the Jesus Christ lizard.  What can this lizard do to earn the name?",
     choices: {
@@ -123,17 +123,17 @@ const questionBank = [
         b: "Can resurrect from the dead.",
         c: "Walks on water.",
         d: "Can cure blindness."},
-    correctAnswer: "c",
-    rationale: "https://www.nationalgeographic.com/animals/reptiles/g/green-basilisk-lizard/"},
+    correctAnswer: "Walks on water.",
+    rationale: "https://www.nationalgeographic.com/animals/reptiles/g/green-basilisk-lizard/ Runs on water actually!"},
     
     {question: "Which animal has a blue tongue?",
     choices: {
         a: "Blue-tongued skink",
-        b: "Chow Chow",
+        b: "Chow Chow dog",
         c: "Okapi",
-        d: "all of the above"},
-    correctAnswer: "d",
-    rationale: "http://www.arielesieling.com/blog/2016/animals-with-blue-tongues"},
+        d: "All of the above"},
+    correctAnswer: "All of the above",
+    rationale: "http://www.arielesieling.com/blog/2016/animals-with-blue-tongues The only other animal with a blue tongue is the giraffe which is a close relative of the Okapi."},
     
     {question: "How fast can a Mako shark swim?",
     choices: {
@@ -141,8 +141,8 @@ const questionBank = [
         b: "42mph",
         c: "47mph",
         d: "32mph"},
-    correctAnswer: "b",
-    rationale: "https://en.wikipedia.org/wiki/Shortfin_mako_shark"},
+    correctAnswer: "42mph",
+    rationale: "https://en.wikipedia.org/wiki/Shortfin_mako_shark Toothy water bullet!"},
     
     {question: "How high can a jaguar jump?",
     choices: {
@@ -150,8 +150,8 @@ const questionBank = [
         b: "12 feet",
         c: "8 feet",
         d: "14 feet"},
-    correctAnswer: "a",
-    rationale: "http://bedtimemath.org/fun-math-animals-jumping/"},
+    correctAnswer: "10 feet",
+    rationale: "http://bedtimemath.org/fun-math-animals-jumping/ they could jump up and land on a basketball rim."},
 
     {question: "Tiger beetles are the fastest running insects clocking a blazing 5.6 mph.  This is about 125 body length per second.  If a Tiger beetle could maintain that speed while the size of a cheetah how fast would it be running?",
     choices: {
@@ -159,7 +159,7 @@ const questionBank = [
         b: "300mph - 400mph",
         c: "500mph - 600mph",
         d: "None of the above"},
-    correctAnswer: "b",
+    correctAnswer: "300mph - 400mph",
     rationale: "Cheetahs are 43 inches to 59 inches in length, or 3.6 – 4.9 ft long.  This length would be traveled 125 times in 1 second.  So for 3.6 feet, (3.6 x 125 x 60 x 60) / 5280 = 305mph and using the same equation for 4.9 feet = 419mph"},
     
     {question: "Humans are one of only five species that are known to experience menopause. Which group of mammals also experience menopause?",
@@ -168,16 +168,16 @@ const questionBank = [
         b: "Rhinos and Hippos. (White and Black Rhinos, pigmy and standard Hippos.",
         c: "Bears (Grizzly bear, Polar bear, Black bear, Sun bear.",
         d: "Marine Mammals (Narwhal, Beluga whale, Orca, Short-finned Pilot whales."},
-    correctAnswer: "d",
+    correctAnswer: "Marine Mammals (Narwal, Beluga whale, Orca, Short-finned Pilot whales.",
     rationale: "Marine Mammals, it is mentioned that elephants may experience menopause as well, but not confirmed as of yet.  The exceptionally long life span of marine mammals (some exceeding 100+ years) makes menopause necessary."},
     
-    {question: "what is the airspeed velocity of an unladen swallow?",
+    {question: "What is the airspeed velocity of an unladen swallow?",
     choices: {
         a: "4mph",
         b: "14mph",
         c: "24mph",
         d: "34mph"},
-    correctAnswer: "c",
+    correctAnswer: "24mph",
     rationale: "I had to include this question, and thanks to the google machine, 24mph is in fact the velocity"},
     
     {question: "Which mammal routinely gives birth to identical quadruplets?",
@@ -186,6 +186,6 @@ const questionBank = [
         b: "Opossum",
         c: "Tazmanian Devil",
         d: "Naked mole-rat"},
-    correctAnswer: "a",
-    rationale: "https://video.nationalgeographic.com/video/0000015a-3d7c-d7df-a9df-fffc39e90002"}
+    correctAnswer: "Armodillo",
+    rationale: "https://video.nationalgeographic.com/video/0000015a-3d7c-d7df-a9df-fffc39e90002 armored bois like to make 4 exact replicas."}
 ];
