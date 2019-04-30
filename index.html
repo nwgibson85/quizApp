@@ -3,24 +3,23 @@
   <head> 
     <title>Quiz App</title> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css"> 
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+	 crossorigin="anonymous"> 
     <meta name="description" content="How much do you know about the animal kingdom?"> 
     <link rel="stylesheet" href="main.css" type="text/css"/> 
   </head> 
   <body> 
-    <header id='rainforest banner'>
-      <!--img class="banner" src="https://vars.hotjar.com/box-d743cafc9d1fb7eed204caa92025802f.html" alt="rainforest on a foggy day"/><span class='rainforest-banner'>Random and mostly useless animal facts</span>-->        
-    </header> 
     <main>
       <div id="screenView">
-        <section id="startQ" class='container-start'>
-          <h1>Random Animal Facts Quiz</h1>
+        <section class='box-start' id="startQ" class='container-start'>
+          <h1>Animal Facts Quiz</h1>
           <p>"Test your knowledge!"</p>
           <button id='begin' class='button'>Begin Quiz</button>
         </section>
-        <section id='quiz' class='container-quiz'></section>
-        <section id='rationale' class='container-rationale'></section>
-        <section id='results' class='container-results'></section> 
+        <section class='box-quiz' id='quiz' ></section>
+        <section class='box-rationale' id='rationale' ></section>
+        <section class='box-results' id='results'></section> 
       </div>
     </main> 
     <footer id='scoreKeeper-qCounter'>
@@ -28,6 +27,7 @@
           <li>Question: <span class="questionNum">0</span>/10</li>
           <li>Score: <span class="scoreBoard">0</span></li>
       </ul>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> 
     <script src="STORE.js"></script> 
     <script src="index.js"></script> 
