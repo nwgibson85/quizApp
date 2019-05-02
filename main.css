@@ -5,124 +5,130 @@
 } 
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background: url('https://get.pxhere.com/photo/branch-plant-leaf-flower-dark-line-green-jungle-darkness-fern-computer-wallpaper-fractal-art-505665.jpg') fixed;
-  background-size: cover; 
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border: none;
-  background-color: rgb(29, 83, 62);
-  color: rgb(172, 252, 225);   
+    font-family: 'Roboto', sans-serif;
+    background: url('https://get.pxhere.com/photo/branch-plant-leaf-flower-dark-line-green-jungle-darkness-fern-computer-wallpaper-fractal-art-505665.jpg') fixed;
+    background-size: cover;  
+    display: flex;
+    flex-direction: column;
+    border: none;
+    background-color: rgb(29, 83, 62);
+    color: rgb(172, 252, 225);  
+    font-size: 30px; 
 }
 
-#startQ {
-  display: flex;
-  flex-direction: column;
-  flex-direction: center;
-  min-width: 380;
-  text-align: center;
-}
-
-#rationale {
+#screenView {
+    display: flex;
+    flex-direction: column;
+    flex-direction: center;
     text-align: center;
-}
-
-p {
-  margin-bottom: 15px;
-}
-  
-footer {
-  text-align: center;
-  background-color: slategrey;
-  color: rgb(172, 252, 225);
-  margin: auto;
-  margin-top: 15px;
-}
-
-.click {
-  height: 50px;
-  width: 50px;
-}
-
-.choices [type=radio] { 
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.choices {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  border: dashed rgb(212, 250, 168);
-}
-
-#begin {
     margin: auto;
 }
 
+p,
+h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+    background-color: slategrey;
+    color: aquamarine;
+}
+
+.click {
+    height: 50px;
+    width: 50px;
+}
+
+.choices [type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border: dashed rgb(212, 250, 168);
+}
+
 button {
-  padding: 20px;
-  border: none;
-  background-color: slategrey;
-  color: #ffffff;
-  font-size: 20px;
-  text-transform: uppercase;
-  border-radius: 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 40px;
-  width: 380px; 
-  margin: auto;  
+    padding: 20px;
+    border: none;
+    background-color: slategrey;
+    color: #ffffff;
+    font-size: 30px;
+    text-transform: uppercase;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: auto; 
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px; 
 }
-
-.rationale-text {
-  background-color: slategrey;
-  color: rgb(172, 252, 225);
-}
-
-.rationale-link {
-  margin-bottom: 15px;
-  background-color: slategrey;
-  color: rgb(172, 252, 225);
-}
-
-.ansRationale {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-}
-
-.ansCorrect-Img, .ansIncorrect-Img {
-  margin: auto;
-  margin-top: 15px;
-}
-  
+ 
 button:hover {
-  background-color: rgb(184, 184, 98);
+    background-color: rgb(184, 184, 98);
 }
 
-.choices-a:hover, .choices-b:hover, .choices-c:hover, .choices-d:hover {
-  color: slategrey;
-  background-color: rgb(172, 252, 225);
+.choices-a:hover, 
+.choices-b:hover, 
+.choices-c:hover, 
+.choices-d:hover {
+    color: slategrey;
+    background-color: rgb(172, 252, 225);
 }
 
-.choices-a, .choices-b, .choices-c, .choices-d {
-  margin-left: 10px;
-  padding: 5px;
-  margin-bottom: 10px;
-  margin-right: 0;
-  margin-top: 0;
+.choices-a, 
+.choices-b, 
+.choices-c, 
+.choices-d {
+    margin-left: 0px;
+    padding: 5px;
+    margin-bottom: 0px;
+    margin-right: 0;
+    margin-top: 0;
+    background-color: slategrey;
 }
 
 .choices [type=radio]:checked + img {
-    outline: 2px solid rgb(253, 253, 114);
+    outline: 8px solid rgb(253, 253, 114);
 }
 
 .choices [type=radio] + img {
     cursor: pointer;
+}
+
+.choices [type=radio] { 
+    position: absolute;
+}
+
+#displayQuestion {
+    background-color: rgb(172, 252, 225);
+    color: slategrey; 
+}
+
+#rationale {
+    
+    text-align: center;
+}
+
+.ansCorrect-Img, .ansIncorrect-Img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    margin: auto;
+    margin-top: 0px;
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    max-width: 600px;
 }
 
 .rationale-img {
@@ -131,285 +137,57 @@ button:hover {
     margin: auto;
 }
 
-#displayQuestion {
+#quiz {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+.rationale-text,
+.rationale-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
     background-color: slategrey;
-    color: rgb(172, 252, 225);
+    width: 100%;
+}
+
+.rationale-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    max-height: 600px;
+    max-width: 600px;
+}
+
+.resultsPage-h2,
+#tryAgain > p {
+    background-color:  slategrey;
+}
+
+#celebrate,
+#ohBoy,
+#golfClap {
+    width: 75%;
+    height: 75%;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    background-color: slategrey;
+    margin: auto;
+    padding: 5px;
 }
 
 #footer {
     list-style-type: none;
-}
-
-@media (min-width: 1025px) {
-    
-    h1 {
-        font-size: 40px;
-    }
-    
-    #displayQuestion {
-        font-size: 36px;
-    }
-    
-    p { 
-        font-size: 30px;
-        margin-bottom: 15px;
-    }
-    
-    footer {
-        font-size: 30px;
-        width: 150px;
-    }
-    
-    .choices {
-        font-size: 24px;
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        border: dashed rgb(212, 250, 168);
-    }   
-    
-    .choices-a, .choices-b, .choices-c, .choices-d {
-        margin-left: 10px;
-        padding: 5px;
-        margin-bottom: 10px;
-        margin-right: 0;
-        margin-top: 0;
-        font-size: 20px;
-    }
-    
-    button {
-        margin-top: 0px;   
-    }
-    
-    .rationale-img {
-        width: 50%;
-        height: 50%;
-        margin-top: 15px;
-        border: none;
-    }
-    
-    .ansCorrect-Img, .ansIncorrect-Img {
-        height: 1360;
-        width: 480;
-        margin-bottom: 15px;
-    }
-
-    .rationale-link {
-        font-size: 36px;
-        width: 50%;
-        margin: auto;
-        margin-top: 15px;
-    } 
-    
-    .rationale-text {
-        font-size: 30px;
-        width: 50%;
-        margin: auto;
-    }
-
-    .rationale-img, .rationale-link {
-        width: 75%;
-    }
-
-}
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    h1 {
-        font-size: 30px;
-        }
-    
-    h2 {
-        font-size: 24px;
-    }
-    
-    p { 
-        font-size: 20px;
-        margin-bottom: 15px;
-    }
-    
-    footer {
-        font-size: 20px;
-        width: 100px;
-    }
-    
-    .choices {
-        font-size: 18px;
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        border: dashed rgb(212, 250, 168);
-    }   
-    
-    .choices-a, .choices-b, .choices-c, .choices-d {
-        margin-left: 10px;
-        padding: 5px;
-        margin-bottom: 10px;
-        margin-right: 0;
-        margin-top: 0;
-        font-size: 16px;
-    }
-    
-    button {
-        margin-top: 0px;   
-    }
-    
-    .rationale-img {
-        max-width: 100%;
-        min-width: 360px;
-        min-height: 360px;
-        margin-top: 15px;
-        border: none;
-    }
-
-    #rational {
-        width: 360px;
-    }
-    
-    
-    .ansCorrect-Img, .ansIncorrect-Img {
-        height: 150px;
-        width: 180px;
-        padding: 15px;
-    }
-
-    .rationale-link {
-        font-size: 30px;
-        width: 50%;
-        margin: auto;
-    } 
-    
-    .rationale-text {
-        font-size: 36px;
-        width: 50%;
-        margin: auto;
-    }
-
-}
-
-@media (min-width: 481px) and (max-width: 767px) {
-    
-    h1 {
-        font-size: 24;
-    }
-    
-    #displayQuestion {
-        font-size: 18;
-    }
-    
-    p { 
-        font-size: 18;
-        margin-bottom: 15px;
-    }
-    
-    footer {
-        font-size: 18;
-        width: 50px;
-    }
-    
-    .choices {
-        font-size: 16px;
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        border: dashed rgb(212, 250, 168);
-    }   
-    
-    .choices-a, .choices-b, .choices-c, .choices-d {
-        margin-left: 10px;
-        padding: 5px;
-        margin-bottom: 10px;
-        margin-right: 0;
-        margin-top: 0;
-        font-size: 16px;
-    }
-    
-    button {
-        margin-top: 0px;   
-    }
-    
-    .rationale-img {
-        width: 481px;
-        max-height: 481px;
-        margin-top: 15px;
-        border: none;
-    }
-    
-    .ansCorrect-Img, .ansIncorrect-Img {
-            height: 150px;
-            width: 180px;
-            padding: 15px;
-        }
-
-        .rationale-link {
-            font-size: 24px;
-            width: 50%;
-            margin: auto;
-        } 
-        
-        .rationale-text {
-            font-size: 30px;
-            width: 50%;
-            margin: auto;
-        }
-    
-}
-
-@media (min-width: 275px) and (max-width: 480px) {
-
-    h1 {
-    font-size: 24;
-    }
-
-    h2 {
-        font-size: 18;
-    }
-
-    p { 
-        font-size: 18;
-        margin-bottom: 15px;
-    }
-
-    footer {
-        font-size: 18;
-        width: 50px;
-    }
-
-    .choices {
-        font-size: 16px;
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        border: dashed rgb(212, 250, 168);
-    }   
-
-    .choices-a, .choices-b, .choices-c, .choices-d {
-        margin-left: 10px;
-        padding: 5px;
-        margin-bottom: 10px;
-        margin-right: 0;
-        margin-top: 0;
-        font-size: 16px;
-    }
-
-    button {
-        margin-top: 0px; 
-    }
-
-    .ansCorrect-Img, .ansIncorrect-Img {
-        height: 150px;
-        width: 180px;
-        padding: 15px;
-    }
-
-    .rationale-link {
-        font-size: 20px;
-        width: 50%;
-        margin: auto;
-    } 
-    
-    .rationale-text {
-        font-size: 24px;
-        width: 50%;
-        margin: auto;
-    }
 }

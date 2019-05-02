@@ -1,9 +1,9 @@
 let askedQs = [];
 let randomQ;
+let reactiveImg;
 let n = 0;
 let scoreBoard = 0;
 let questionNum = -1;
-let reactiveImg;
 
 // Model functions? 
 function selectRandomQ() { 
@@ -25,7 +25,7 @@ function selectRandomQ() {
     } 
     console.log(askedQs); 
 } 
-
+// change text(questionNum+1?)
 function changeQNum() {
     console.log("question num changed");
     questionNum ++;
@@ -36,7 +36,7 @@ function changeScoreBoard() {
     console.log("score changed");
     return scoreBoard ++;
 }
-
+// change text(scoreBoard)?
 function scoreBoardUpdated() {
     changeScoreBoard();
     $('.scoreBoard').text(scoreBoard);
@@ -65,7 +65,6 @@ function resetValues() {
     $('.scoreBoard').text(scoreBoard);
 }
 
-
 function generateReactiveResultsImg() {
   if (scoreBoard >= 8) {
     displayResultsBest();
@@ -90,19 +89,19 @@ function renderQs() {
          <fieldset class="choices">
             <legend id='displayQuestion'>${questionBank[askedQs[n]].question}</legend>
             <label class="choices-a">
-            <input type="radio" value="${questionBank[askedQs[n]].choices.a}" name="choice" required><img class='click' src="https://i.imgflip.com/23aeq6.jpg" alt='orangutan raising arm'>
+            <input id='a' type="radio" value="${questionBank[askedQs[n]].choices.a}" name="choice" checked='checked'><img class='click' src="https://i.imgflip.com/23aeq6.jpg" alt='orangutan raising arm'>
             <span>${questionBank[askedQs[n]].choices.a}</span>
             </label>
             <label class="choices-b">
-            <input type="radio" value="${questionBank[askedQs[n]].choices.b}" name="choice" required><img class='click' src="http://allwallps.com/bin/00/84/65a.jpg" alt='tree frog raising arm'>
+            <input id='b' type="radio" value="${questionBank[askedQs[n]].choices.b}" name="choice" ><img class='click' src="http://allwallps.com/bin/00/84/65a.jpg" alt='tree frog raising arm'>
             <span>${questionBank[askedQs[n]].choices.b}</span>
             </label>
             <label class="choices-c">
-            <input type="radio" value="${questionBank[askedQs[n]].choices.c}" name="choice" required><img class='click' src="http://4.bp.blogspot.com/-8U8bD4XX2K4/T9o3TiMhVzI/AAAAAAAANVE/QN3cy8Kt0Xc/s1600/funny-animals-baby-chimp-greeting.jpg" alt='baby chimp raising hand'>
+            <input id='c' type="radio" value="${questionBank[askedQs[n]].choices.c}" name="choice" ><img class='click' src="http://4.bp.blogspot.com/-8U8bD4XX2K4/T9o3TiMhVzI/AAAAAAAANVE/QN3cy8Kt0Xc/s1600/funny-animals-baby-chimp-greeting.jpg" alt='baby chimp raising hand'>
             <span>${questionBank[askedQs[n]].choices.c}</span>
             </label>
             <label class="choices-d">
-            <input type="radio" value="${questionBank[askedQs[n]].choices.d}" name="choice" required><img class='click' src="https://66.media.tumblr.com/2db992a5ce9895d05223df54bb7319d4/tumblr_nmmcdndtWc1upwzm1o1_640.jpg" alt='otter raising both arms'>
+            <input id='d' type="radio" value="${questionBank[askedQs[n]].choices.d}" name="choice" ><img class='click' src="https://66.media.tumblr.com/2db992a5ce9895d05223df54bb7319d4/tumblr_nmmcdndtWc1upwzm1o1_640.jpg" alt='otter raising both arms'>
             <span>${questionBank[askedQs[n]].choices.d}</span>
             </label>
             <button id='showRationale' class='button'>see answer</button>
@@ -169,9 +168,9 @@ function displayIncorrectAnsRationale() {
 
 function displayResultsDecent() {
   return $(`#results`).html(
-    `<img src=${resultsImg.decent}>
-      <label class="resultsPage">
-            <img src=""> 
+    `<h2 class="resultsPage-h2">Good attempt, maybe you can improve on a second attempt.</h2>
+    <img id="golfClap" src=${resultsImg.decent}>
+      <label class="resultsPage"> 
             <span id=tryAgain"><p>Check your score below, and if you dare give the quiz another attempt!</p></span>
             <button type="submit" id="restartQ" class='button'>Restart Quiz</button>
         </label>`
@@ -180,9 +179,9 @@ function displayResultsDecent() {
 
 function displayResultsTryAgain() {
   return $(`#results`).html(
-    `<img src=${resultsImg.tryAgain}>
+    `<h2 class="resultsPage-h2">Honest effort, better luck next time!.</h2>
+    <img id="ohBoy" src=${resultsImg.tryAgain}>
       <label class="resultsPage">
-            <img src=""> 
             <span id=tryAgain"><p>Check your score below, and if you dare give the quiz another attempt!</p></span>
             <button type="submit" id="restartQ" class='button'>Restart Quiz</button>
         </label>`
@@ -191,9 +190,9 @@ function displayResultsTryAgain() {
 
 function displayResultsBest() {
   return $(`#results`).html(
-    `<img src=${resultsImg.best}>
-      <label class="resultsPage">
-            <img src=""> 
+    `<h2 class="resultsPage-h2">Celebrate, You rocked it!</h2>
+    <img id="celebrate" src=${resultsImg.best}>
+      <label class="resultsPage"> 
             <span id=tryAgain"><p>Check your score below, and if you dare give the quiz another attempt!</p></span>
             <button type="submit" id="restartQ" class='button'>Restart Quiz</button>
         </label>`
@@ -216,13 +215,29 @@ function launchQuiz() {
 }
 
 function handleUserSubmitAns() {
-  console.log("ready to handleUserSubmitAns");
   $('#quiz').on('click', '#showRationale', function(event) {
     event.preventDefault();
+    console.log("ready to handleUserSubmitAns");
     $('#showRationale').hide();
     let userChoice = $('input[type=radio]:checked').val();
-    validateAns(userChoice); 
-  });
+        if (userChoice === undefined) {
+            pleaseClickOnAnswer(false, selectedOption);
+        }
+
+        else {
+           
+            $('input[type=radio]:checked').attr('checked',false);
+            validateAns(userChoice);
+        }
+    });
+}  
+    
+function pleaseClickOnAnswer() {
+    console.log('Need a click')
+    questionCounter--;
+    $(".popup-box img").attr("src",warningIcon);
+    $(".popup-box #popup-text").text('Please click on an answer');
+    $('#quiz').show();
 }
 
 function nextQuestion() {
