@@ -1,5 +1,5 @@
 const resultsImg = {
-    best: 'http://www.laughspark.info/uploadfiles//funny-orangutan-dance-4460.gif',
+    best: 'https://31.media.tumblr.com/498e3ba0edbe1f56b3acd1f846952710/tumblr_msvgpxjn121srkue0o1_500.gif',
     decent: 'https://media3.giphy.com/media/26gsspfbt1HfVQ9va/giphy.gif?cid=790b76115cc53fb56c3764522ee9bc1b&rid=giphy.gif',
     tryAgain: 'https://66.media.tumblr.com/tumblr_lreztluEB81qzado8o4_250.gif'
   }
