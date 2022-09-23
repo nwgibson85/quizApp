@@ -5,7 +5,7 @@ let n = 0;
 let scoreBoard = 0;
 let questionNum = -1;
 
-// Model functions? 
+// randomly selects a question from the Store.js Question bank, and does not repeat a question within the same 10 question quiz 
 function selectRandomQ() { 
     let desiredQuestionNum = 10; 
     for (let i = 0; i < desiredQuestionNum; i++) { 
@@ -25,13 +25,13 @@ function selectRandomQ() {
     } 
     console.log(askedQs); 
 } 
-// change text(questionNum+1?)
+// increases the question number counter
 function changeQNum() {
     console.log("question num changed");
     questionNum ++;
     $('.questionNum').text(questionNum+1);
 }
-
+// increases the score if a correct answer is selected
 function changeScoreBoard() {
     console.log("score changed");
     return scoreBoard ++;
@@ -42,7 +42,7 @@ function scoreBoardUpdated() {
     $('.scoreBoard').text(scoreBoard);
 }
 
-// problem function
+// calls the function to provides answer validation and additional fact after answer is submitted
 function validateAns() {
     console.log('validateAns fired');
     let correctAns = questionBank[askedQs[n]].correctAnswer;
@@ -56,7 +56,7 @@ function validateAns() {
         displayIncorrectAnsRationale();
     }
 }
-
+// resets all values for refreshed quiz
 function resetValues() {
     askedQs = [];
     n = 0;
@@ -64,7 +64,7 @@ function resetValues() {
     scoreBoard = 0;
     $('.scoreBoard').text(scoreBoard);
 }
-
+// based on quiz results calls the appropriate function with a corresponding image/gif
 function generateReactiveResultsImg() {
   if (scoreBoard >= 8) {
     displayResultsBest();
@@ -77,7 +77,7 @@ function generateReactiveResultsImg() {
   }
 }
 
-// View functions? 
+// renders the quiz question onto the dom
 function renderQs() {
     console.log(questionBank[askedQs[n]]);
     console.log('Questions have been rendered');
@@ -114,7 +114,7 @@ function renderQs() {
         $('.questionNum').text(10);
     }
 }
-
+// displays the correct answer rational if called
 function displayCorrectAnsRationale() {
     console.log('displayCorrectAns fired');
     console.log(n);
@@ -140,7 +140,7 @@ function displayCorrectAnsRationale() {
         </label>`);
     }
 }
-    
+// displays the incorrect answer rational if called    
 function displayIncorrectAnsRationale() {
     console.log('displayIncorrectAns fired')
     $('#rationale').show();
@@ -165,7 +165,7 @@ function displayIncorrectAnsRationale() {
       );
     }
 }
-
+//displays the "decent" result image/gif when called
 function displayResultsDecent() {
   return $(`#results`).html(
     `<h2 class="resultsPage-h2">Good attempt, maybe you can improve on a second attempt.</h2>
@@ -176,7 +176,7 @@ function displayResultsDecent() {
         </label>`
   );
 }
-
+//displays the "Try again" result image/gif when called
 function displayResultsTryAgain() {
   return $(`#results`).html(
     `<h2 class="resultsPage-h2">Honest effort, better luck next time!.</h2>
@@ -187,7 +187,7 @@ function displayResultsTryAgain() {
         </label>`
   );
 }
-
+//displays the "best" result image/gif when called
 function displayResultsBest() {
   return $(`#results`).html(
     `<h2 class="resultsPage-h2">Celebrate, You rocked it!</h2>
@@ -213,7 +213,8 @@ function launchQuiz() {
     $('.questionNumber').text(1);
 });
 }
-
+// when submit button is pressed, either requests an answer be selected, 
+// or calls the answer rational function based on selected answer
 function handleUserSubmitAns() {
   $('#quiz').on('click', '#showRationale', function(event) {
     event.preventDefault();
@@ -231,7 +232,7 @@ function handleUserSubmitAns() {
         }
     });
 }  
-    
+// provides a warning that no answer has been selected    
 function pleaseClickOnAnswer() {
     console.log('Need a click')
     questionCounter--;
@@ -239,7 +240,7 @@ function pleaseClickOnAnswer() {
     $(".popup-box #popup-text").text('Please click on an answer');
     $('#quiz').show();
 }
-
+// called when next question button is pressed, calls display next question
 function nextQuestion() {
   $('#rationale').on('click', '#nextQ', function(event) {
     event.preventDefault();
@@ -251,7 +252,7 @@ function nextQuestion() {
   });
 }
 
-// potential issue. 
+// once 10 questions have been submitted, this displays quiz results page 
 function showResults() {
   $('#rationale').on('click', '#displayRes', function(event) {
     console.log('displaying results!');
